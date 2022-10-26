@@ -4,6 +4,7 @@ import WorkoutDetails from "../componets/WorkoutDetails"
 import WorkoutForm from "../componets/WorkoutForm"
 import { WorkoutContext } from "../context/workoutContext"
 import { AuthContext } from "../context/AuthContext"
+import Navbar from "../componets/Navbar"
 
 export default function Home() {
     const {user}= useContext(AuthContext)
@@ -30,6 +31,8 @@ export default function Home() {
 
     },[dispatch, user])
   return (
+    <>
+    <Navbar/>
     <div className='home'>
         <div className="workouts">
             {workouts&& workouts.map((workout, index)=>(
@@ -38,5 +41,6 @@ export default function Home() {
         </div>
         <WorkoutForm/>
     </div>
+    </>
   )
 }

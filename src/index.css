@@ -66,7 +66,15 @@ header a {
   border-radius: 50%;
   color: #333;
 }
-
+@media (max-width:900px) {
+  .home{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .workouts{
+    order: 2;
+  }
+}
 /* new workout form */
 label, input {
   display: block;
@@ -135,7 +143,156 @@ nav button {
   cursor: pointer;
   font-size: 1em;
 }
+.container {
+  /* background-color: #000000; */
+  position: sticky;
+  top: 0;
+  z-index: 10000000000000999;
+}
 
+.nav {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10000000000000999;
+  cursor: pointer;
+  max-width: 1920px;
+  /* margin: 0 auto; */
+
+}
+
+.nav img {
+  width: 120px;
+
+}
+
+.nav ul {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  z-index: 9999;
+  /* gap: 1em; */
+}
+
+.nav li {
+  list-style: none;
+  /* display: grid; */
+  place-items: center;
+  /* height: 40px; */
+  cursor: pointer;
+  width: 120px;
+}
+
+.nav .tabs {
+  list-style: none;
+  display: flex;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16;
+  line-height: 27px;
+  color: #000000;
+}
+ul>div{
+  display: flex;
+}
+.nav .tabs.activetabs {
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 3px solid #ff0000;
+}
+.nav_btn {
+  margin-right: 10px;
+  top: 20px;
+  display: none;
+}
+
+.one {
+  background-color: #000000;
+  height: 4px;
+  width: 30px;
+  margin-bottom: 6px;
+}
+
+.two {
+  background-color: #000000;
+  height: 4px;
+  width: 30px;
+  margin-bottom: 6px;
+}
+
+.three {
+  background-color: #000000;
+  height: 4px;
+  width: 30px;
+  /* margin-bottom: 2px; */
+}
+
+@media (max-width:900px) {
+  .nav {
+      padding: 1em 1em;
+      position: inherit;
+  }
+  .nav h1{
+    font-size: 20px;
+  }
+  nav a{
+    font-size: 16px;
+    gap: 1em;
+  }
+  .nav_btn {
+      display: block;
+      z-index: 0;
+
+  }
+  ul>div{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav .flow {
+      position: fixed;
+      inset: 0 0 0 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      background-color: #ffff;
+      margin-left: 0;
+      place-items: center;
+      text-align: center;
+      transition: .5s;
+      transform: translateX(100vh);
+      z-index: 999;
+      margin: 0 0 0 0;
+  }
+
+  .nav ul {
+      margin-left: 0;
+      padding-left: 0;
+  }
+
+  .nav .flow.responsive_nav {
+      transform: none;
+  }
+
+  .nav_btn {
+      margin-left: auto;
+  }
+
+  .nav_btn.nav_close_btn {
+      position: absolute;
+      top: 10px;
+      right: 2px;
+      width: 22px;
+  }
+
+  .nav img {
+      width: 70%;
+
+  }
+}
 /* auth forms */
 form.signup, form.login {
   max-width: 400px;

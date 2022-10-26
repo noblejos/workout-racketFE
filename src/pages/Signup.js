@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Navbar from "../componets/Navbar"
 import { useSignup } from "../hooks/useSignup"
 
 const Signup = () => {
@@ -16,6 +17,8 @@ const Signup = () => {
 
 
   return (
+    <>
+    <Navbar/>
     <form className="signup" onSubmit={handleSubmit}>
       <h3>Sign Up</h3>
       
@@ -35,6 +38,7 @@ const Signup = () => {
        <button disabled={isLoading} >Sign up</button> 
      {error && <div className="error">{error}</div>} 
     </form>
+    </>
   )
 }
 
